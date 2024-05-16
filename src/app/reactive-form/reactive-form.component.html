@@ -2,18 +2,18 @@
 
 <div>
     <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <form [formGroup]="loginForm">
       <label>Email:</label>
       <input formControlName="email" type="email">
       <br>
       <label>Password:</label>
       <input formControlName="password" type="password">
       <br>
-      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      <button type="submit" [disabled]="!loginForm.valid" (click)="onLoginSubmit()">Login</button>
     </form>
     
     <h2>Demographic</h2>
-    <form [formGroup]="demographicForm" (ngSubmit)="onDemographicSubmit()">
+    <form [formGroup]="demographicForm">
       <label>First Name:</label>
       <input formControlName="firstName" type="text">
       <br>
@@ -23,9 +23,9 @@
       <label>Birth Date:</label>
       <input formControlName="birthDate" type="date">
       <br>
-      <label>Age:</label>
-      <input formControlName="age" type="number">
+      <label>ID card:</label>
+      <input formControlName="idcard" type="string" >
       <br>
-      <button type="submit" [disabled]="!demographicForm.valid">Submit</button>
+      <button type="submit" [disabled]="!demographicForm.valid" (click)="onDemographicSubmit()">Submit</button>
     </form>
   </div>

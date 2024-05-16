@@ -8,7 +8,7 @@ import { first } from 'rxjs';
   standalone: true,
   imports: [ReactiveFormsModule,CommonModule,],
   templateUrl: './reactive-form.component.html',
-  styleUrl: './reactive-form.component.css'
+  styleUrl: './reactive-form.component.css',
 })
 
 export class ReactiveFormComponent {
@@ -24,22 +24,8 @@ export class ReactiveFormComponent {
     firstName: new FormControl(null,Validators.required),
     lastName: new FormControl(null,Validators.required),
     birthDate: new FormControl(null, Validators.required),
-    age: new FormControl(null, [Validators.required, Validators.min(0)]),
+    idcard: new FormControl(null, [Validators.required, Validators.minLength(13),Validators.maxLength(13)]),
   })
-
-  // constructor(private fb: FormBuilder) {
-  //   this.loginForm = this.fb.group({
-  //     email: ['', [Validators.required, Validators.email, Validators.minLength(5), Validators.maxLength(50)]],
-  //     password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
-  //   });
-
-  //   this.demographicForm = this.fb.group({
-  //     firstName: ['', Validators.required],
-  //     lastName: ['', Validators.required],
-  //     birthDate: ['', Validators.required],
-  //     age: ['', [Validators.required, Validators.min(0)]]
-  //   });
-  // }
 
   onLoginSubmit() {
     if (this.loginForm.valid) {

@@ -1,1 +1,16 @@
 <p>directive works!</p>
+
+<p > Attribute Directive </p>
+
+<div appAttdirective>
+    Hover this text
+</div>
+
+<p> Structural Directive </p>
+
+<div *appStructural="isHidden">
+    Test this text by click button, Text will disappear
+</div>
+<br>
+
+<button (click)="change()">Click for test Visibility</button>
