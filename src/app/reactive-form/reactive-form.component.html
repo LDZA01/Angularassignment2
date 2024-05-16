@@ -1,0 +1,31 @@
+<p>reactive-form works!</p>
+
+<div>
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+      <label>Email:</label>
+      <input formControlName="email" type="email">
+      <br>
+      <label>Password:</label>
+      <input formControlName="password" type="password">
+      <br>
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    
+    <h2>Demographic</h2>
+    <form [formGroup]="demographicForm" (ngSubmit)="onDemographicSubmit()">
+      <label>First Name:</label>
+      <input formControlName="firstName" type="text">
+      <br>
+      <label>Last Name:</label>
+      <input formControlName="lastName" type="text">
+      <br>
+      <label>Birth Date:</label>
+      <input formControlName="birthDate" type="date">
+      <br>
+      <label>Age:</label>
+      <input formControlName="age" type="number">
+      <br>
+      <button type="submit" [disabled]="!demographicForm.valid">Submit</button>
+    </form>
+  </div>
